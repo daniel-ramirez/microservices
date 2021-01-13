@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 		userDTO.setLastName(user.getLastName());
 		userDTO.setEmail(user.getEmail());
 
-		userDTO.setDepartment(restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(),
+		userDTO.setDepartment(restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(),
 				DepartmentDTO.class));
 		return userDTO;
 	}
