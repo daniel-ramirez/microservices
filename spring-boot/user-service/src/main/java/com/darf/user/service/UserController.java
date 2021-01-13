@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.darf.user.dto.UserDTO;
+
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -33,7 +35,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/{id}")
-	public User findById(@PathVariable("id") Long id) {
+	public UserDTO findById(@PathVariable("id") Long id) {
 		log.info("Find a User by id");
 		return userService.findById(id);
 	}
